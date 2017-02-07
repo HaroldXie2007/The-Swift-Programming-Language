@@ -4,7 +4,7 @@
 
 用`let来声明常量，用var来声明变量`
 
-`let maximumNumberOfLoginAttempts = 10                    
+`let maximumNumberOfLoginAttempts = 10                      
  var currentLoginAttempt = 0`
 
 ### 类型标注_（type annotation）_
@@ -21,8 +21,8 @@ var welcomeMessage: String 声明中的冒号代表着“是...类型”
 
 ### 输出常量和变量
 
-`print(friendlyWelcome)              
-// 输出 "Bonjour!"Swift 用字符串插值（string interpolation）的方式把常量名或者变量名当做占位符加入到长字符串中：print("The current value of friendlyWelcome is \(friendlyWelcome)")              
+`print(friendlyWelcome)                
+// 输出 "Bonjour!"Swift 用字符串插值（string interpolation）的方式把常量名或者变量名当做占位符加入到长字符串中：print("The current value of friendlyWelcome is \(friendlyWelcome)")                
 // 输出 "The current value of friendlyWelcome is Bonjour!`
 
 ## 注释 {#ee656aa13bfbf6dfd83440765959d43f}
@@ -203,4 +203,29 @@ print("The status code is \(http200Status.statusCode)")
 print("The status message is \(http200Status.description)")
 // 输出 "The status message is OK"
 ```
+
+### 可选类型
+
+使用_可选类型（optionals）_来处理值可能缺失的情况。可选类型表示：
+
+* 有值，等于 x
+
+或者
+
+* 没有值
+
+### nil
+
+你可以给可选变量赋值为`nil`来表示它没有值：
+
+```
+var serverResponseCode: Int? = 404
+// serverResponseCode 包含一个可选的 Int 值 404
+serverResponseCode = nil
+// serverResponseCode 现在不包含值
+```
+
+>
+
+
 
