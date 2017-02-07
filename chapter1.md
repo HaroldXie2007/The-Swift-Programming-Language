@@ -4,7 +4,7 @@
 
 用`let来声明常量，用var来声明变量`
 
-`let maximumNumberOfLoginAttempts = 10        
+`let maximumNumberOfLoginAttempts = 10          
  var currentLoginAttempt = 0`
 
 ### 类型标注_（type annotation）_
@@ -21,10 +21,8 @@ var welcomeMessage: String 声明中的冒号代表着“是...类型”
 
 ### 输出常量和变量
 
-`print(friendlyWelcome)  
-// 输出 "Bonjour!"  
-`Swift 用字符串插值（string interpolation）的方式把常量名或者变量名当做占位符加入到长字符串中：`  
-print("The current value of friendlyWelcome is \(friendlyWelcome)")  
+`print(friendlyWelcome)    
+// 输出 "Bonjour!"Swift 用字符串插值（string interpolation）的方式把常量名或者变量名当做占位符加入到长字符串中：print("The current value of friendlyWelcome is \(friendlyWelcome)")    
 // 输出 "The current value of friendlyWelcome is Bonjour!`
 
 ## 注释 {#ee656aa13bfbf6dfd83440765959d43f}
@@ -41,9 +39,21 @@ print("The current value of friendlyWelcome is \(friendlyWelcome)")
 
 ## 分号 {#cb368833d4910b55cc4cdc5539b69b97}
 
-Swift 并不强制要求你在每条语句的结尾处使用分号（`;`），当然，你也可以按照你自己的习惯添加分号。
+Swift 并不强制要求你在每条语句的结尾处使用分号（`;），当然，你也可以按照你自己的习惯添加分号。`
 
 
+
+## 整数 {#b5f1a7cd15761173a095c35c5a06f177}
+
+Swift 提供了8，16，32和64位的有符号和无符号整数类型。这些整数类型和 C 语言的命名方式很像，比如8位无符号整数类型是
+
+`UInt8`
+
+，32位有符号整数类型是
+
+`Int32`
+
+。就像 Swift 的其他类型一样，整数类型采用大写命名法。
 
 
 
