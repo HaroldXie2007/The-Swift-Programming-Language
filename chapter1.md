@@ -4,7 +4,7 @@
 
 用`let来声明常量，用var来声明变量`
 
-`let maximumNumberOfLoginAttempts = 10    
+`let maximumNumberOfLoginAttempts = 10      
  var currentLoginAttempt = 0`
 
 ### 类型标注_（type annotation）_
@@ -13,11 +13,7 @@
 var welcomeMessage: String 声明中的冒号代表着“是...类型”
 ```
 
-  可以在一行中定义多个同样类型的变量，用逗号分割，并在最后一个变量名之后添加类型标注：
-
-```
-var red, green, blue: Double
-```
+可以在一行中定义多个同样类型的变量，用逗号分割，并在最后一个变量名之后添加类型标注：var red, green, blue: Double
 
 ### 常量和变量的命名
 
@@ -28,6 +24,9 @@ var red, green, blue: Double
 ```
 print(friendlyWelcome)
 // 输出 "Bonjour!"
+Swift 用字符串插值（string interpolation）的方式把常量名或者变量名当做占位符加入到长字符串中：
+print("The current value of friendlyWelcome is \(friendlyWelcome)")
+// 输出 "The current value of friendlyWelcome is Bonjour!
 ```
 
 
