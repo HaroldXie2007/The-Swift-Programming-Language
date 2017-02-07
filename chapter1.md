@@ -1,6 +1,17 @@
 # First Chapter
 
-## 常量和变量 {#3f3b3d448d0db83bfebaccc1294d45c8}
+### 常量和变量
 
-用`let`来声明常量，用`var`来声明变量
+用`let来声明常量，用var来声明变量`
+
+`let maximumNumberOfLoginAttempts = 10  
+ var currentLoginAttempt = 0`
+
+### 类型标注_（type annotation）_
+
+```
+var welcomeMessage: String 声明中的冒号代表着“是...类型”
+```
+
+
 
