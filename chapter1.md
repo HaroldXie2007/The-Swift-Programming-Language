@@ -4,7 +4,7 @@
 
 用`let来声明常量，用var来声明变量`
 
-`let maximumNumberOfLoginAttempts = 10                              
+`let maximumNumberOfLoginAttempts = 10                                
  var currentLoginAttempt = 0`
 
 ### 类型标注_（type annotation）_
@@ -21,8 +21,8 @@ var welcomeMessage: String 声明中的冒号代表着“是...类型”
 
 ### 输出常量和变量
 
-`print(friendlyWelcome)                        
-// 输出 "Bonjour!"Swift 用字符串插值（string interpolation）的方式把常量名或者变量名当做占位符加入到长字符串中：print("The current value of friendlyWelcome is \(friendlyWelcome)")                        
+`print(friendlyWelcome)                          
+// 输出 "Bonjour!"Swift 用字符串插值（string interpolation）的方式把常量名或者变量名当做占位符加入到长字符串中：print("The current value of friendlyWelcome is \(friendlyWelcome)")                          
 // 输出 "The current value of friendlyWelcome is Bonjour!`
 
 ## 注释 {#ee656aa13bfbf6dfd83440765959d43f}
@@ -269,7 +269,60 @@ if let actualNumber = Int(possibleNumber) {
 
 这段代码可以被理解为：
 
-“如果`Int(possibleNumber)返回的可选Int包含一个值，创建一个叫做actualNumber的新常量并将可选包含的值赋给它。”`
+“如果Int\(possibleNumber\)返回的可选Int包含一个值，创建一个叫做actualNumber的新常量并将可选包含的值赋给它。”
 
-可以包含多个可选绑定或多个布尔条件在一个`if`语句中，只要使用逗号分开就行。
+可以包含多个可选绑定或多个布尔条件在一个if语句中，只要使用逗号分开就行。
+
+### 隐式解析可选类型
+
+有时候在程序架构中，第一次被赋值之后，可以确定一个可选类型\_总会\_有值。在这种情况下，每次都要判断和解析可选值是非常低效的，因为可以确定它总会有值。
+
+这种类型的可选状态被定义为隐式解析可选类型（implicitly unwrapped optionals）。把想要用作可选的类型的后面的问号（`String?`）改成感叹号（`String!`）来声明一个隐式解析可选类型。
+
+下面的例子展示了可选类型`String`和隐式解析可选类型`String`之间的区别：
+
+```
+let possibleString: String? = "An optional string."
+let forcedString: String = possibleString! // 需要感叹号来获取值
+
+let assumedString: String! = "An implicitly unwrapped optional string."
+let implicitString: String = assumedString  // 不需要感叹号
+```
+
+> 注意：如果一个变量之后可能变成`nil`的话请不要使用隐式解析可选类型。如果你需要在变量的生命周期中判断是否是`nil`的话，请使用普通可选类型。
+
+### 错误处理
+
+当一个函数遇到错误条件，它能报错。调用函数的地方能抛出错误消息并合理处理。
+
+```
+func canThrowAnError() throws {
+    // 这个函数有可能抛出错误
+}
+```
+
+一个函数可以通过在声明中添加`throws`关键词来抛出错误消息。当你的函数能抛出错误消息时, 你应该在表达式中前置`try`关键词。
+
+```
+do {
+    try canThrowAnError()
+    // 没有错误消息抛出
+} catch {
+    // 有一个错误消息抛出
+}
+```
+
+### 断言
+
+### 使用断言进行调试
+
+可以使用全局`assert(_:_:file:line:)`函数来写一个断言。向这个函数传入一个结果为`true`或者`false`的表达式以及一条信息，当表达式的结果为`false`的时候这条信息会被显示：
+
+```
+let age = -3
+assert(age >= 0, "A person's age cannot be less than zero")
+// 因为 age < 0，所以断言会触发
+```
+
+
 
