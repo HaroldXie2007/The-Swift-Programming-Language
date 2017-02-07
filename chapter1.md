@@ -4,7 +4,7 @@
 
 用`let来声明常量，用var来声明变量`
 
-`let maximumNumberOfLoginAttempts = 10                
+`let maximumNumberOfLoginAttempts = 10                  
  var currentLoginAttempt = 0`
 
 ### 类型标注_（type annotation）_
@@ -21,8 +21,8 @@ var welcomeMessage: String 声明中的冒号代表着“是...类型”
 
 ### 输出常量和变量
 
-`print(friendlyWelcome)          
-// 输出 "Bonjour!"Swift 用字符串插值（string interpolation）的方式把常量名或者变量名当做占位符加入到长字符串中：print("The current value of friendlyWelcome is \(friendlyWelcome)")          
+`print(friendlyWelcome)            
+// 输出 "Bonjour!"Swift 用字符串插值（string interpolation）的方式把常量名或者变量名当做占位符加入到长字符串中：print("The current value of friendlyWelcome is \(friendlyWelcome)")            
 // 输出 "The current value of friendlyWelcome is Bonjour!`
 
 ## 注释 {#ee656aa13bfbf6dfd83440765959d43f}
@@ -76,32 +76,32 @@ Float表示32位浮点数。精度要求不高的话可以使用此类型。
 
 由于 Swift 是类型安全的，所以它会在编译你的代码时进行_类型检查（type checks）_，并把不匹配的类型标记为错误。这可以让你在开发的时候尽早发现并修复错误。
 
-当你在声明常量或者变量的时候赋给它们一个字面量（literal value 或 literal）即可触发类型推断。（字面量就是会直接出现在你代码中的值，比如`42`和`3.14159`。）
+当你在声明常量或者变量的时候赋给它们一个字面量（literal value 或 literal）即可触发类型推断。（字面量就是会直接出现在你代码中的值，比如`42和3.14159。）`
 
-例如，如果你给一个新常量赋值`42`并且没有标明类型，Swift 可以推断出常量类型是`Int`，因为你给它赋的初始值看起来像一个整数：
+例如，如果你给一个新常量赋值`42并且没有标明类型，Swift 可以推断出常量类型是Int，因为你给它赋的初始值看起来像一个整数：`
 
 ```
 let meaningOfLife = 42
 // meaningOfLife 会被推测为 Int 类型
 ```
 
-同理，如果你没有给浮点字面量标明类型，Swift 会推断你想要的是`Double`：
+同理，如果你没有给浮点字面量标明类型，Swift 会推断你想要的是`Double：`
 
 ```
 let pi = 3.14159
 // pi 会被推测为 Double 类型
 ```
 
-当推断浮点数的类型时，Swift 总是会选择`Double`而不是`Float`。
+当推断浮点数的类型时，Swift 总是会选择`Double而不是Float。`
 
-如果表达式中同时出现了整数和浮点数，会被推断为`Double`类型：
+如果表达式中同时出现了整数和浮点数，会被推断为`Double类型：`
 
 ```
 let anotherPi = 3 + 0.14159
 // anotherPi 会被推测为 Double 类型
 ```
 
-原始值`3`没有显式声明类型，而表达式中出现了一个浮点字面量，所以表达式会被推断为`Double`类型。
+原始值`3没有显式声明类型，而表达式中出现了一个浮点字面量，所以表达式会被推断为Double类型。`
 
 ### 数值型字面量
 
@@ -141,21 +141,59 @@ let pi = Double(three) + pointOneFourOneFiveNine
 // pi 等于 3.14159，所以被推测为 Double 类型
 ```
 
-## 类型别名 {#51c4a47321d555f07442c0e6ea9b934e}
+### 类型别名
 
-_类型别名（type aliases）_就是给现有类型定义另一个名字。你可以使用`typealias`关键字来定义类型别名。
+_类型别名（type aliases）_就是给现有类型定义另一个名字。你可以使用`typealias关键字来定义类型别名。`
 
 ```
 typealias AudioSample = UInt16
 ```
 
-## 布尔值 {#06e1ad9139447d870c245ffbd0af2636}
+### 布尔值
 
-Swift 有两个布尔常量，`true`和`false。`
+Swift 有两个布尔常量，`true和false。`
 
-## 元组 {#cda9f200088a3396902af2d4b5efb290}
+### 元组
 
 _元组（tuples）_把多个值组合成一个复合值。元组内的值可以是任意类型，并不要求是相同类型。
+
+```
+let http404Error = (404, "Not Found")
+// http404Error 的类型是 (Int, String)，值是 (404, "Not Found")
+```
+
+你可以将一个元组的内容分解（decompose）成单独的常量和变量，然后你就可以正常使用它们了：
+
+```
+let (statusCode, statusMessage) = http404Error
+print("The status code is \(statusCode)")
+// 输出 "The status code is 404"
+print("The status message is \(statusMessage)")
+// 输出 "The status message is Not Found"
+```
+
+如果你只需要一部分元组值，分解的时候可以把要忽略的部分用下划线（`_`）标记：
+
+```
+let (justTheStatusCode, _) = http404Error
+print("The status code is \(justTheStatusCode)")
+// 输出 "The status code is 404"
+```
+
+此外，你还可以通过下标来访问元组中的单个元素，下标从零开始：
+
+```
+print("The status code is \(http404Error.0)")
+// 输出 "The status code is 404"
+print("The status message is \(http404Error.1)")
+// 输出 "The status message is Not Found"
+```
+
+你可以在定义元组的时候给单个元素命名：
+
+```
+let http200Status = (statusCode: 200, description: "OK")
+```
 
 
 
