@@ -4,7 +4,7 @@
 
 用`let来声明常量，用var来声明变量`
 
-`let maximumNumberOfLoginAttempts = 10            
+`let maximumNumberOfLoginAttempts = 10              
  var currentLoginAttempt = 0`
 
 ### 类型标注_（type annotation）_
@@ -21,8 +21,8 @@ var welcomeMessage: String 声明中的冒号代表着“是...类型”
 
 ### 输出常量和变量
 
-`print(friendlyWelcome)      
-// 输出 "Bonjour!"Swift 用字符串插值（string interpolation）的方式把常量名或者变量名当做占位符加入到长字符串中：print("The current value of friendlyWelcome is \(friendlyWelcome)")      
+`print(friendlyWelcome)        
+// 输出 "Bonjour!"Swift 用字符串插值（string interpolation）的方式把常量名或者变量名当做占位符加入到长字符串中：print("The current value of friendlyWelcome is \(friendlyWelcome)")        
 // 输出 "The current value of friendlyWelcome is Bonjour!`
 
 ## 注释 {#ee656aa13bfbf6dfd83440765959d43f}
@@ -43,11 +43,11 @@ Swift 并不强制要求你在每条语句的结尾处使用分号（`;），当
 
 ## 整数 {#b5f1a7cd15761173a095c35c5a06f177}
 
-Swift 提供了8，16，32和64位的有符号和无符号整数类型。这些整数类型和 C 语言的命名方式很像，比如8位无符号整数类型是`UInt8`，32位有符号整数类型是`Int32`。就像 Swift 的其他类型一样，整数类型采用大写命名法。
+Swift 提供了8，16，32和64位的有符号和无符号整数类型。这些整数类型和 C 语言的命名方式很像，比如8位无符号整数类型是`UInt8，32位有符号整数类型是Int32。就像 Swift 的其他类型一样，整数类型采用大写命名法。`
 
 ### 整数范围
 
-你可以访问不同整数类型的`min`和`max`属性来获取对应类型的最小值和最大值：
+你可以访问不同整数类型的`min和max属性来获取对应类型的最小值和最大值：`
 
 ```
 let minValue = UInt8.min  // minValue 为 0，是 UInt8 类型
@@ -60,11 +60,15 @@ let maxValue = UInt8.max  // maxValue 为 255，是 UInt8 类型
 
 在64位平台上，Int和Int64长度相同。
 
-除非你需要特定长度的整数，一般来说使用`Int`就够了。
+除非你需要特定长度的整数，一般来说使用`Int就够了。`
 
 ### UInt
 
-尽量不要使用`UInt`，除非你真的需要存储一个和当前平台原生字长相同的无符号整数。除了这种情况，最好使用`Int,`即使你要存储的值已知是非负的。
+尽量不要使用UInt，除非你真的需要存储一个和当前平台原生字长相同的无符号整数。除了这种情况，最好使用Int,即使你要存储的值已知是非负的。
 
+## 浮点数 {#40eac52238bc9b30a14bc057d26b25a3}
 
+Double表示64位浮点数。当你需要存储很大或者很高精度的浮点数时请使用此类型。
+
+Float表示32位浮点数。精度要求不高的话可以使用此类型。
 
