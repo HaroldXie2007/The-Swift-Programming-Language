@@ -4,7 +4,7 @@
 
 用`let来声明常量，用var来声明变量`
 
-`let maximumNumberOfLoginAttempts = 10                      
+`let maximumNumberOfLoginAttempts = 10                            
  var currentLoginAttempt = 0`
 
 ### 类型标注_（type annotation）_
@@ -21,8 +21,8 @@ var welcomeMessage: String 声明中的冒号代表着“是...类型”
 
 ### 输出常量和变量
 
-`print(friendlyWelcome)                
-// 输出 "Bonjour!"Swift 用字符串插值（string interpolation）的方式把常量名或者变量名当做占位符加入到长字符串中：print("The current value of friendlyWelcome is \(friendlyWelcome)")                
+`print(friendlyWelcome)                      
+// 输出 "Bonjour!"Swift 用字符串插值（string interpolation）的方式把常量名或者变量名当做占位符加入到长字符串中：print("The current value of friendlyWelcome is \(friendlyWelcome)")                      
 // 输出 "The current value of friendlyWelcome is Bonjour!`
 
 ## 注释 {#ee656aa13bfbf6dfd83440765959d43f}
@@ -216,7 +216,7 @@ print("The status message is \(http200Status.description)")
 
 ### nil
 
-你可以给可选变量赋值为`nil`来表示它没有值：
+你可以给可选变量赋值为`nil来表示它没有值：`
 
 ```
 var serverResponseCode: Int? = 404
@@ -225,7 +225,49 @@ serverResponseCode = nil
 // serverResponseCode 现在不包含值
 ```
 
->
+如果你声明一个可选常量或者变量但是没有赋值，它们会自动被设置为`nil：`
 
+```
+var surveyAnswer: String?
+// surveyAnswer 被自动设置为 nil
+```
 
+### if 语句以及强制解析
+
+你可以使用`if语句和nil比较来判断一个可选值是否包含值。你可以使用“相等”(==)或“不等”(!=)来执行比较。`
+
+如果可选类型有值，它将不等于`nil：`
+
+```
+if convertedNumber != nil {
+    print("convertedNumber contains some integer value.")
+}
+// 输出 "convertedNumber contains some integer value."
+```
+
+当你确定可选类型确实包含值之后，你可以在可选的名字后面加一个感叹号（`!）来获取值。这个惊叹号表示“我知道这个可选有值，请使用它。”这被称为可选值的`_`强制解析（forced unwrapping）`_`：`
+
+```
+if convertedNumber != nil {
+    print("convertedNumber has an integer value of \(convertedNumber!).")
+}
+// 输出 "convertedNumber has an integer value of 123."
+```
+
+### 可选绑定
+
+使用_可选绑定（optional binding）_来判断可选类型是否包含值，如果包含就把值赋给一个临时常量或者变量。
+
+```
+if let actualNumber = Int(possibleNumber) {
+    print("\'\(possibleNumber)\' has an integer value of \(actualNumber)")
+} else {
+    print("\'\(possibleNumber)\' could not be converted to an integer")
+}
+// 输出 "'123' has an integer value of 123"
+```
+
+这段代码可以被理解为：
+
+“如果`Int(possibleNumber)`返回的可选`Int`包含一个值，创建一个叫做`actualNumber`的新常量并将可选包含的值赋给它。”
 
