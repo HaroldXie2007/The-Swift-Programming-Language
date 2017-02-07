@@ -4,7 +4,7 @@
 
 用`let来声明常量，用var来声明变量`
 
-`let maximumNumberOfLoginAttempts = 10                            
+`let maximumNumberOfLoginAttempts = 10                              
  var currentLoginAttempt = 0`
 
 ### 类型标注_（type annotation）_
@@ -21,8 +21,8 @@ var welcomeMessage: String 声明中的冒号代表着“是...类型”
 
 ### 输出常量和变量
 
-`print(friendlyWelcome)                      
-// 输出 "Bonjour!"Swift 用字符串插值（string interpolation）的方式把常量名或者变量名当做占位符加入到长字符串中：print("The current value of friendlyWelcome is \(friendlyWelcome)")                      
+`print(friendlyWelcome)                        
+// 输出 "Bonjour!"Swift 用字符串插值（string interpolation）的方式把常量名或者变量名当做占位符加入到长字符串中：print("The current value of friendlyWelcome is \(friendlyWelcome)")                        
 // 输出 "The current value of friendlyWelcome is Bonjour!`
 
 ## 注释 {#ee656aa13bfbf6dfd83440765959d43f}
@@ -269,5 +269,7 @@ if let actualNumber = Int(possibleNumber) {
 
 这段代码可以被理解为：
 
-“如果`Int(possibleNumber)`返回的可选`Int`包含一个值，创建一个叫做`actualNumber`的新常量并将可选包含的值赋给它。”
+“如果`Int(possibleNumber)返回的可选Int包含一个值，创建一个叫做actualNumber的新常量并将可选包含的值赋给它。”`
+
+可以包含多个可选绑定或多个布尔条件在一个`if`语句中，只要使用逗号分开就行。
 
