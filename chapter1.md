@@ -4,7 +4,7 @@
 
 用`let来声明常量，用var来声明变量`
 
-`let maximumNumberOfLoginAttempts = 10                  
+`let maximumNumberOfLoginAttempts = 10                    
  var currentLoginAttempt = 0`
 
 ### 类型标注_（type annotation）_
@@ -21,8 +21,8 @@ var welcomeMessage: String 声明中的冒号代表着“是...类型”
 
 ### 输出常量和变量
 
-`print(friendlyWelcome)            
-// 输出 "Bonjour!"Swift 用字符串插值（string interpolation）的方式把常量名或者变量名当做占位符加入到长字符串中：print("The current value of friendlyWelcome is \(friendlyWelcome)")            
+`print(friendlyWelcome)              
+// 输出 "Bonjour!"Swift 用字符串插值（string interpolation）的方式把常量名或者变量名当做占位符加入到长字符串中：print("The current value of friendlyWelcome is \(friendlyWelcome)")              
 // 输出 "The current value of friendlyWelcome is Bonjour!`
 
 ## 注释 {#ee656aa13bfbf6dfd83440765959d43f}
@@ -172,7 +172,7 @@ print("The status message is \(statusMessage)")
 // 输出 "The status message is Not Found"
 ```
 
-如果你只需要一部分元组值，分解的时候可以把要忽略的部分用下划线（`_`）标记：
+如果你只需要一部分元组值，分解的时候可以把要忽略的部分用下划线（`_）标记：`
 
 ```
 let (justTheStatusCode, _) = http404Error
@@ -195,5 +195,12 @@ print("The status message is \(http404Error.1)")
 let http200Status = (statusCode: 200, description: "OK")
 ```
 
+给元组中的元素命名后，你可以通过名字来获取这些元素的值：
 
+```
+print("The status code is \(http200Status.statusCode)")
+// 输出 "The status code is 200"
+print("The status message is \(http200Status.description)")
+// 输出 "The status message is OK"
+```
 
