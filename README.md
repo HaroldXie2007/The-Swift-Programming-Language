@@ -10,5 +10,9 @@ This file file serves as your book's preface, a great place to describe your boo
 
 定义**下标**使用**`subscript`**关键字。
 
-如果要重写某个特性，你需要在重写定义的前面加上`override`关键字。这么做，你就表明了你是想提供一个重写版本，而非错误地提供了一个相同的定义。（参看继承）
+如果要重写某个特性，你需要在重写定义的前面加上`override关键字。这么做，你就表明了你是想提供一个重写版本，而非错误地提供了一个相同的定义。（参看继承）`
+
+在合适的地方，你可以通过使用`super前缀来访问超类版本的方法，属性或下标。（参看继承）`
+
+你可以通过把方法，属性或下标标记为_`final`_来防止它们被重写，只需要在声明关键字前加上`final`修饰符即可（例如：`final var`，`final func`，`final class func`，以及`final subscript`）。\(参看继承）
 
