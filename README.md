@@ -14,5 +14,9 @@ This file file serves as your book's preface, a great place to describe your boo
 
 在合适的地方，你可以通过使用`super前缀来访问超类版本的方法，属性或下标。（参看继承）`
 
-你可以通过把方法，属性或下标标记为_`final`_来防止它们被重写，只需要在声明关键字前加上`final`修饰符即可（例如：`final var`，`final func`，`final class func`，以及`final subscript`）。\(参看继承）
+你可以通过把方法，属性或下标标记为_`final`_来防止它们被重写，只需要在声明关键字前加上`final修饰符即可（例如：final var，final func，final class func，以及final subscript）。(参看继承）`
+
+**便利构造器**也采用相同样式的写法，但需要在`init`关键字之前放置**`convenience`**关键字，并使用空格将它们俩分开（参考构造过程）
+
+
 
