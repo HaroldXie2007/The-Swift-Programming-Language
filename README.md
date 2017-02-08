@@ -8,5 +8,7 @@ This file file serves as your book's preface, a great place to describe your boo
 
 如果你确实需要在某个特定的方法中**修改结构体或者枚举的属性**，你可以为这个方法选择**可变\(mutating\)**行为，然后就可以从其方法内部改变它的属性。（参看方法）
 
-定义**下标**使用**`subscript`**关键字
+定义**下标**使用**`subscript`**关键字。
+
+如果要重写某个特性，你需要在重写定义的前面加上`override`关键字。这么做，你就表明了你是想提供一个重写版本，而非错误地提供了一个相同的定义。（参看继承）
 
