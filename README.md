@@ -16,7 +16,15 @@ This file file serves as your book's preface, a great place to describe your boo
 
 你可以通过把方法，属性或下标标记为_`final`_来防止它们被重写，只需要在声明关键字前加上`final修饰符即可（例如：final var，final func，final class func，以及final subscript）。(参看继承）`
 
-**便利构造器**也采用相同样式的写法，但需要在`init`关键字之前放置**`convenience`**关键字，并使用空格将它们俩分开（参考构造过程）
+**便利构造器**也采用相同样式的写法，但需要在`init关键字之前放置`**`convenience`**`关键字，并使用空格将它们俩分开（参考构造过程）`
+
+在类的构造器前添加`required修饰符表明所有该类的子类都必须实现该构造器。（参看构造过程）`
+
+在子类重写父类的必要构造器时，必须在子类的构造器前也添加`required修饰符，表明该构造器要求也应用于继承链后面的子类。在重写父类中必要的指定构造器时，不需要添加override修饰符。（参看构造过程`
+
+```
+
+```
 
 
 
